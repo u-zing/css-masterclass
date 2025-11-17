@@ -1,0 +1,240 @@
+@mixin btn-style($border, $radius, $padding: 8px, $bgColor: transparent) {
+  border: $border;
+  border-radius: $radius;
+  padding: $padding;
+  background-color: $bgColor;
+}
+$borderR: 20px;
+
+.project01 {
+  background-color: #dce6d1;
+  display: flex;
+  justify-content: center;
+}
+.phone {
+  background-color: black;
+  border-radius: 30px;
+  width: 320px;
+  height: 650px;
+  margin: 20px;
+  padding: 10px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.header {
+  color: white;
+  padding-top: 50px;
+  margin-bottom: 20px;
+  font-size: small;
+  .header__list {
+    display: flex;
+    gap: 5px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin: 10px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .header__list-item {
+      @include btn-style(1px solid rgba(255, 255, 255, 0.345), 50px, 8px);
+
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
+
+.cards {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, auto);
+  font-size: 22px;
+  gap: 7px;
+  .cards__card:nth-child(3n) {
+    grid-column: 1/ -1;
+  }
+  .cards__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+    padding: 15px;
+    border-radius: $borderR;
+    background-color: white;
+    line-height: 27px;
+
+    &:nth-child(1) {
+      background: #292c33;
+      color: white;
+      border: 1px solid white;
+    }
+    &:nth-child(3) {
+      background: #fbfec9;
+    }
+    &:nth-child(4) {
+      background: #b4a2f6;
+    }
+    &:nth-child(5) {
+      background: #ffd3d4;
+    }
+    &:nth-child(6) {
+      background: #cfffdc;
+    }
+
+    .card__title {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      margin-bottom: 10px;
+    }
+  }
+}
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  align-items: flex-end;
+}
+.price,
+.length {
+  height: 30px;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  font-size: x-small;
+  @include btn-style(1px solid rgb(0, 0, 0), 50px, 10px, white);
+}
+.yellow {
+  background-color: #fbdc31;
+}
+.pink {
+  background-color: #e9affe;
+}
+@mixin bar($bgColor, $width) {
+  background-color: $bgColor;
+  width: $width;
+  height: 3px;
+  border-radius: 20px;
+}
+.percent {
+  display: flex;
+  flex-direction: column;
+  .percent-bar {
+    @include bar(#53565d, 100%);
+    .percent-bar__bar {
+      @include bar(white, 63%);
+    }
+  }
+}
+.main-card {
+  background-color: #cee1ff;
+  background: radial-gradient(circle, rgb(255, 255, 255), #ecf6d8, #cee1ff);
+  margin-top: 40px;
+  height: 85%;
+  border-radius: $borderR;
+  padding: 15px;
+}
+.main-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+.main-card__header-user {
+  i {
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
+  }
+  span {
+    font-size: small;
+  }
+}
+.main-card__title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin-top: 90px;
+  font-size: 45px;
+  line-height: 50px;
+}
+.main-card__footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+
+  span {
+    font-size: x-small;
+  }
+  .percent-bar__text {
+    font-size: 30px;
+  }
+}
+.percent-bar {
+  height: 12px;
+  border-radius: $borderR;
+  background-color: white;
+  border: 1px solid black;
+}
+.percent-bar__fill {
+  width: 63%;
+  height: 12px;
+  border-top-left-radius: $borderR;
+  border-bottom-left-radius: $borderR;
+
+  background-color: rgb(0, 0, 0);
+}
+.dates {
+  display: flex;
+  justify-content: space-between;
+}
+.continue-btn {
+  @include btn-style(2px solid black, 15px, 15px, white);
+  text-align: center;
+  font-size: small;
+  margin-top: 20px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
+.bottom {
+  margin-top: 10px;
+  height: 10%;
+  position: relative;
+  @include btn-style(none, 15px, 10px, white);
+  border-bottom-left-radius: $borderR;
+  border-bottom-right-radius: $borderR;
+  .menu {
+    position: relative;
+    top: -30px;
+    left: 90px;
+    background-color: black;
+    width: 40%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+
+    i {
+      border-radius: 50%;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      padding-top: 12px;
+      background-color: #53565d;
+      color: white;
+
+      &:hover {
+        scale: 1.1;
+      }
+    }
+  }
+  .sticker {
+    position: relative;
+    top: -65px;
+    right: -230px;
+    transform: rotate(45deg);
+  }
+}

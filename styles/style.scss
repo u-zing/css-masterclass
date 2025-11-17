@@ -1,0 +1,11 @@
+@use "reset.scss";
+@use "projects/project01";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 1000vh;
+  font-family: sans-serif;
+  width: auto;
+}
