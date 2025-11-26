@@ -1,5 +1,7 @@
 @use "reset.scss";
-@use "projects/project01";
+@use "/styles/projects/project01.scss";
+@use "/styles/projects/project02.scss";
+
 * {
   box-sizing: border-box;
 }
